@@ -1,0 +1,21 @@
+{
+  "name": "ai-agent-hw2-convert-unit",
+  "version": "1.0.0",
+  "description": "AI Agent 作業 2：Function Calling 單位換算工具",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "node function_call.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.4.3",
+    "dotenv": "^17.4.2",
+    "lowdb": "^7.0.1",
+    "openai": "^6.38.0",
+    "ora": "^9.4.0"
+  }
+}
