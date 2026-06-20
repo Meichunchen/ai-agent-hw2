@@ -53,8 +53,6 @@ const tools = [convertUnitTool];
 
 ## 錯誤處理
 
-工具回傳的 error 物件範例（仿 weather 工具格式）：
-
 ```json
 // value 不是數字
 { "error": "value 必須是數字，收到的是: \"攝氏\"" }
