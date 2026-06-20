@@ -54,7 +54,7 @@ const tools = [convertUnitTool];
 ---
 
 ## 實測對話紀錄
-
+![Function Calling](./HW2.PNG)
 ### 測試 1：
 
 **你問：** 200磅是幾公斤
