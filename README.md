@@ -20,28 +20,17 @@ ai-agent-hw2/
 
 ## 工具註冊
 
-依照教材的寫法，把工具的 import 跟註冊資料直接放在 `function_call.js` 和 `main.js` 的開頭：
-
 ```js
 import { convertUnitTool, convertUnit } from "./tools/convertUnit.js";
 
-// ===== 工具註冊中心 =====
 const AVAILABLE_TOOLS = {
   convert_unit: convertUnit,
 };
 
 const tools = [convertUnitTool];
-// ========================
 ```
 
-- `AVAILABLE_TOOLS` = 工具名稱 → 實際函數的對應表（AI 呼叫時 dispatcher 查表用）
-- `tools` = schema 陣列（傳給 OpenAI，告訴它有哪些工具可用）
-
-未來要加新工具，改這兩個變數即可。
-
 ## JSON Schema 定義
-
-完整定義見 [`tools/convertUnit.js`](./tools/convertUnit.js)：
 
 ```js
 {
@@ -61,11 +50,6 @@ const tools = [convertUnitTool];
   }
 }
 ```
-
-**設計重點：**
-- `value` 用 `number`，AI 傳字串會被工具回傳 error
-- `from_unit` / `to_unit` 用 `string` 而非 `enum`，並在 `description` 列出可接受的別名 — 這樣 AI 從自然語言抓單位時不會被嚴格限制，工具內部的 `UNIT_ALIASES` 表負責正規化
-- 三個都列在 `required`，確保 AI 不會漏傳
 
 ## 錯誤處理
 
